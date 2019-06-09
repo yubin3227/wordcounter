@@ -1,0 +1,42 @@
+{% load static %}
+
+<head>
+  <link rel="stylesheet" type="text/css">
+  <style> 
+  
+  *{text-align: center;}
+      body{
+        background-image: url("static/images/정혁.jpg");
+        }
+  </style>
+    
+</head>
+
+<body>
+    <img src="{% static 'images/정혁.jpg' %}">
+    
+
+<h2> 당신이 입력한 텍스트는 {{total}}로 구성되어 있습니다. </h2>
+
+<a href = "{% url 'home'%}" button type="button" class="btn btn-primary btn-sm"> 다시하기 </a>
+<br>
+
+
+<h2> 입력한 텍스트: </h2>
+<!-- 입력받은 전체 텍스트--> 
+{{full}}
+
+<h2> 단어 카운트 : <h2>
+<!-- '단어 '- '단어가 나온 횟수'-->
+{% for word, howmany in dictionary %}
+
+{{word}} : {{howmany}}  <!--딕셔너리 출력값 반복-->
+<br>
+{%endfor%}
+
+</body>
+
+
+
+
+
